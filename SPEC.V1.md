@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Créer une page d'accueil unique, claire et concise pour l'initiative "Neuf". La page doit être immédiatement publiable et optimisée pour le partage sur les réseaux sociaux.
+Créer une page d'accueil unique, claire et concise pour l'initiative "Neuf", axée sur l'action individuelle continue et la responsabilité personnelle.
 
 ## Contenu de la Page (`index.html`)
 
@@ -13,22 +13,19 @@ Créer une page d'accueil unique, claire et concise pour l'initiative "Neuf". La
 
 ### 2. Message de bienvenue
 
--   "Bienvenue sur le site de Neuf, l'initiative citoyenne dédiée à la propreté et au renouveau de notre quartier. Nous agissons activement dans les secteurs de la 9e Rue, d'Everett, du parc Sandro-Pertini et de Saint-Michel jusqu'à l'entrée de JFK. Rejoignez-nous pour transformer notre environnement en un lieu plus sain, plus agréable et plus respectueux pour tous."
+-   "Bienvenue sur le site de Neuf, l'initiative citoyenne où la propreté et le renouveau de notre quartier sont l'affaire de tous. Nous encourageons une prise en charge individuelle et continue pour améliorer notre environnement : notre rue, notre quartier, nos parcs. Chaque geste compte."
 
 ### 3. Actions à prendre (Call to Action)
 
 -   **Titre de la section :** "Comment agir ?"
--   **Participer à une corvée :**
-    -   "Rejoignez nos prochaines corvées de nettoyage ! Chaque main compte pour faire une réelle différence."
-    -   "Prochaines dates : (à venir)"
-    -   "Ce qu'il faut apporter : Votre bonne humeur, des gants de travail (si vous en avez)."
-    -   "Ce que nous fournissons : Sacs poubelles, pinces de ramassage (dans la limite des stocks)."
--   **Signaler un problème :**
-    -   "Vous avez repéré un dépôt sauvage, une zone particulièrement sale ou un problème de déchets ? Contactez directement la Ville de Montréal au 311."
--   **Devenir bénévole régulier :**
-    -   "Vous souhaitez vous engager plus profondément et régulièrement avec l'initiative Neuf ? Contactez-nous à contact@neufquartier.org."
--   **Parler à vos voisins :**
-    -   "Parlez à vos voisins et aux commerces pour les encourager à prendre en charge la propreté au-delà de leur terrain pour conserver un quartier propre."
+-   **Passez à l'action :**
+    -   "Améliorez VOTRE environnement direct. Ramassez un déchet, nettoyez une petite zone, entretenez un coin de verdure. Chaque action, même petite, a un impact."
+-   **Inspirez votre communauté :**
+    -   "Prenez une photo géolocalisée de votre intervention et partagez-la. Montrez l'exemple et créez une pression sociale positive sur vos voisins pour qu'ils fassent de même."
+-   **Signaler un problème majeur :**
+    -   "Pour les dépôts sauvages ou les problèmes de déchets qui nécessitent une intervention plus importante, contactez directement la Ville de Montréal au 311."
+-   **Engagez la conversation :**
+    -   "Parlez à vos voisins et aux commerces. Encouragez-les à participer à cet effort collectif en maintenant la propreté au-delà de leur propre terrain."
 
 ### 4. Nos Actions en Images
 
@@ -38,7 +35,7 @@ Créer une page d'accueil unique, claire et concise pour l'initiative "Neuf". La
 ### 5. Notre Mission
 
 -   **Titre de la section :** "Notre Mission"
--   "L'initiative Neuf est née de la conviction qu'un environnement propre est la base d'une communauté saine et vibrante. Notre mission est d'agir concrètement pour la propreté et d'encourager la prise en charge collective de notre environnement."
+-   "L'initiative Neuf est née de la conviction qu'un environnement propre est la base d'une communauté saine et vibrante. Notre mission est de promouvoir une culture de la propreté par l'action individuelle et de créer un effet d'entraînement pour une prise en charge collective de notre environnement."
 
 ### 6. Pied de page (Footer)
 
@@ -59,6 +56,7 @@ Ajouter les balises Open Graph suivantes dans la section `<head>` de `index.html
 
 -   `index.html`
 -   `css/style.css`
+-   `js/script.js`
 -   `README.md`
 -   `SPEC.V1.md`
 -   `SPEC.V2.md`
