@@ -1,6 +1,6 @@
 # Neuf - L'initiative citoyenne
 
-Ce dépôt contient le code source du site web statique pour l'initiative citoyenne "Neuf". Le site est conçu pour être hébergé sur GitHub Pages.
+Ce dépôt contient le code source du site web de l'initiative citoyenne "Neuf".
 
 ## Description
 
@@ -8,32 +8,21 @@ Ce dépôt contient le code source du site web statique pour l'initiative citoye
 
 ## Structure du site
 
-Le site est composé des pages suivantes :
-
-- **Accueil (`index.html`)**: Présentation de l'initiative, appel à l'action et dernières actualités.
-- **Notre Mission (`pages/mission.html`)**: Informations sur les objectifs et les valeurs de "Neuf".
-- **Agir Ensemble (`pages/participer.html`)**: Comment les citoyens peuvent s'impliquer.
-- **Nos Actions (`pages/actions.html`)**: Galerie de photos et rapports d'activités.
-- **Actualités (`pages/actualites.html`)**: Liste des articles et des nouvelles.
-- **Contact (`pages/contact.html`)**: Formulaire de contact pour joindre l'initiative.
+Le site est actuellement une seule page "landing page" qui regroupe toutes les informations essentielles.
 
 ## Développement
 
-Le site est construit avec HTML, CSS et un peu de JavaScript. La structure des fichiers est la suivante :
+Le site est construit avec HTML, CSS et JavaScript. La structure des fichiers est la suivante :
 
-- `index.html`: Page d'accueil.
-- `css/style.css`: Feuille de style globale.
-- `js/script.js`: Fichier pour le JavaScript (carrousel et lightbox à venir).
-- `pages/`: Dossier contenant les autres pages HTML.
-- `images/`: Dossier pour les images.
-- `content/`: Dossier pour les articles de blog au format Markdown.
+-   `index.html`: Page d'accueil.
+-   `css/style.css`: Feuille de style globale.
+-   `js/script.js`: Fichier pour le JavaScript.
+-   `images/`: Dossier pour les images.
 
 ## Hébergement
 
-Le site est conçu pour être hébergé sur GitHub Pages. Pour le déployer, il suffit d'activer GitHub Pages dans les paramètres du dépôt.
+Le site est conçu pour être hébergé sur GitHub Pages.
 
-## Améliorations futures
+## Évolutions futures
 
-- Implémentation d'un carrousel d'images sur la page d'accueil.
-- Implémentation d'une lightbox pour la galerie de photos.
-- Mise en place d'un script pour générer automatiquement les pages d'actualités à partir des fichiers Markdown.
+La `SPEC.V2.md` décrit une version plus complète du site qui pourra être développée dans le futur.
