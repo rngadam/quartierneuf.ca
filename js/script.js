@@ -1,17 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const langFr = document.getElementById('lang-fr');
     const langEn = document.getElementById('lang-en');
-    const frElements = document.querySelectorAll('[lang="fr"]');
-    const enElements = document.querySelectorAll('[lang="en"]');
+    const frContainer = document.querySelector('div[lang="fr"]');
+    const enContainer = document.querySelector('div[lang="en"]');
+    const frHeader = document.querySelector('header div[lang="fr"]');
+    const enHeader = document.querySelector('header div[lang="en"]');
+
 
     const setLanguage = (lang) => {
         if (lang === 'en') {
-            frElements.forEach(el => el.style.display = 'none');
-            enElements.forEach(el => el.style.display = 'block');
+            frContainer.style.display = 'none';
+            enContainer.style.display = 'block';
+            frHeader.style.display = 'none';
+            enHeader.style.display = 'block';
             document.documentElement.lang = 'en';
         } else {
-            enElements.forEach(el => el.style.display = 'none');
-            frElements.forEach(el => el.style.display = 'block');
+            enContainer.style.display = 'none';
+            frContainer.style.display = 'block';
+            enHeader.style.display = 'none';
+            frHeader.style.display = 'block';
             document.documentElement.lang = 'fr';
         }
     };
