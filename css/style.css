@@ -44,6 +44,10 @@ h1, h2, h3 {
     color: #004d40; /* Deep teal/blue for headings */
 }
 
+header h1, header h2 {
+    color: #fff; /* White for header titles */
+}
+
 /* Links and Buttons */
 a {
     color: #00796b; /* Green for links */
