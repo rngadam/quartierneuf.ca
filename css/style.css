@@ -4,13 +4,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
+    background: #f0f4f8; /* Light blue-gray background */
     color: #333;
 }
 
 /* Header */
 header {
-    background: #333;
+    background: #004d40; /* Deep teal/blue */
     color: #fff;
     padding: 2rem 0;
     text-align: center;
@@ -41,28 +41,32 @@ section {
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: #004d40; /* Deep teal/blue for headings */
 }
 
 /* Links and Buttons */
 a {
-    color: #333;
+    color: #00796b; /* Green for links */
 }
 
 .button {
     display: inline-block;
-    background: #333;
+    background: #00796b; /* Green for buttons */
     color: #fff;
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
 }
 
+.button:hover {
+    background: #004d40; /* Darker green on hover */
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: #333;
+    background: #004d40; /* Deep teal/blue */
     color: #fff;
 }
 
