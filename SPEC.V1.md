@@ -40,7 +40,7 @@ Créer une page d'accueil unique, claire et concise pour l'initiative "Neuf", ax
 ### 6. Pied de page (Footer)
 
 -   "© 2025 Neuf. Tous droits réservés."
--   "Contact : contact@neufquartier.org"
+-   "Contact : contact@quartierneuf.ca"
 -   Liens vers les réseaux sociaux (Facebook, Instagram).
 
 ## Optimisation pour les réseaux sociaux
@@ -50,7 +50,7 @@ Ajouter les balises Open Graph suivantes dans la section `<head>` de `index.html
 -   `<meta property="og:title" content="Neuf : Votre Quartier Prend Vie !">`
 -   `<meta property="og:description" content="Ensemble, on Renouvelle notre Quartier. Rejoignez l'initiative citoyenne pour un environnement plus propre.">`
 -   `<meta property="og:image" content="URL_de_l_image_a_definir">` (une image représentative du projet)
--   `<meta property="og:url" content="URL_du_site_une_fois_deploye">`
+-   `<meta property="og:url" content="https://quartierneuf.ca">`
 
 ## Structure des fichiers
 
