@@ -1,63 +1,78 @@
-# SPEC.V1.md: Landing Page
+# SPEC.V1.md: Landing Page Bilingue
 
 ## Objectif
 
-Créer une page d'accueil unique, claire et concise pour l'initiative "Neuf", axée sur l'action individuelle continue et la responsabilité personnelle.
+Créer une page d'accueil unique, bilingue (français/anglais), claire et concise pour l'initiative "Neuf", axée sur l'action individuelle continue et la responsabilité personnelle.
+
+## Fonctionnalités
+
+-   **Détection de la langue :** Le site détecte la langue du navigateur et affiche le contenu correspondant par défaut.
+-   **Sélecteur de langue :** Un sélecteur de langue (FR/EN) permet de basculer manuellement entre les deux langues.
 
 ## Contenu de la Page (`index.html`)
 
-### 1. En-tête (Header)
+Le contenu est structuré en deux blocs principaux, un pour chaque langue.
+
+### Contenu Français
+
+#### 1. En-tête (Header)
 
 -   **Titre principal :** "Neuf : Votre Quartier Prend Vie !"
 -   **Sous-titre/message clé :** "Ensemble, on Renouvelle notre Quartier."
 
-### 2. Message de bienvenue
+#### 2. Message de bienvenue
 
 -   "Bienvenue sur le site de Neuf, l'initiative citoyenne où la propreté et le renouveau de notre quartier sont l'affaire de tous. Nous encourageons une prise en charge individuelle et continue pour améliorer notre environnement : notre rue, notre quartier, nos parcs. Chaque geste compte."
 
-### 3. Actions à prendre (Call to Action)
+#### 3. Actions à prendre (Call to Action)
 
 -   **Titre de la section :** "Comment agir ?"
--   **Passez à l'action :**
-    -   "Améliorez VOTRE environnement direct. Ramassez un déchet, nettoyez une petite zone, entretenez un coin de verdure. Chaque action, même petite, a un impact."
--   **Inspirez votre communauté :**
-    -   "Prenez une photo géolocalisée de votre intervention et partagez-la. Montrez l'exemple et créez une pression sociale positive sur vos voisins pour qu'ils fassent de même."
--   **Signaler un problème majeur :**
-    -   "Pour les dépôts sauvages ou les problèmes de déchets qui nécessitent une intervention plus importante, contactez directement la Ville de Montréal au 311."
--   **Engagez la conversation :**
-    -   "Parlez à vos voisins et aux commerces. Encouragez-les à participer à cet effort collectif en maintenant la propreté au-delà de leur propre terrain."
+-   **Passez à l'action :** "Améliorez VOTRE environnement direct..."
+-   **Inspirez votre communauté :** "Prenez une photo géolocalisée de votre intervention..."
+-   **Signaler un problème majeur :** "Pour les dépôts sauvages..."
+-   **Engagez la conversation :** "Parlez à vos voisins et aux commerces..."
 
-### 4. Nos Actions en Images
+#### 4. Engager les Commerces et la Ville
+
+-   **Titre de la section :** "Engager les Commerces et la Ville"
+-   **Engager les Commerces Locaux :** "Les commerces de proximité..."
+-   **Demander l'Intervention de la Voirie :** "La responsabilité première du nettoyage..."
+-   **Interpeller les Élus Locaux :** "Les conseillers municipaux..."
+
+#### 5. Nos Actions en Images
 
 -   **Titre de la section :** "Nos Actions en Images"
--   **Lien vers l'album photo :** Un bouton ou un lien proéminent "Voir notre album photo" qui pointe vers `https://photos.app.goo.gl/4F4gDjzjsxZbgyeL9`.
+-   **Lien vers l'album photo :** "Voir notre album photo"
 
-### 5. Notre Mission
+#### 6. Notre Mission
 
 -   **Titre de la section :** "Notre Mission"
--   "L'initiative Neuf est née de la conviction qu'un environnement propre est la base d'une communauté saine et vibrante. Notre mission est de promouvoir une culture de la propreté par l'action individuelle et de créer un effet d'entraînement pour une prise en charge collective de notre environnement."
+-   "L'initiative Neuf est née de la conviction qu'un environnement propre..."
 
-### 6. Pied de page (Footer)
+### Contenu Anglais (traduction du contenu français)
 
--   "© 2025 Neuf. Tous droits réservés."
+#### 1. Header
+
+-   **Main title:** "Neuf: Your Neighbourhood Comes Alive!"
+-   **Subtitle/key message:** "Together, let's renew our neighborhood."
+
+#### 2. Welcome message
+
+-   "Welcome to the Neuf website, the citizen initiative where the cleanliness and renewal of our neighborhood are everyone's business..."
+
+...et ainsi de suite pour toutes les sections.
+
+### Pied de page (Footer)
+
+-   "© 2025 Neuf. Tous droits réservés. | All rights reserved."
 -   "Contact : contact@quartierneuf.ca"
--   Liens vers les réseaux sociaux (Facebook, Instagram).
-
-## Optimisation pour les réseaux sociaux
-
-Ajouter les balises Open Graph suivantes dans la section `<head>` de `index.html`:
-
--   `<meta property="og:title" content="Neuf : Votre Quartier Prend Vie !">`
--   `<meta property="og:description" content="Ensemble, on Renouvelle notre Quartier. Rejoignez l'initiative citoyenne pour un environnement plus propre.">`
--   `<meta property="og:image" content="URL_de_l_image_a_definir">` (une image représentative du projet)
--   `<meta property="og:url" content="https://quartierneuf.ca">`
 
 ## Structure des fichiers
 
--   `index.html`
+-   `index.html` (contient les deux langues)
 -   `css/style.css`
--   `js/script.js`
+-   `js/script.js` (gère la détection et le changement de langue)
 -   `README.md`
 -   `SPEC.V1.md`
 -   `SPEC.V2.md`
--   `images/` (pour le logo et l'image de partage)
+-   `images/`
