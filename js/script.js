@@ -1,42 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const langFr = document.getElementById('lang-fr');
-    const langEn = document.getElementById('lang-en');
-    const frContainer = document.querySelector('div[lang="fr"]');
-    const enContainer = document.querySelector('div[lang="en"]');
-    const frHeader = document.querySelector('header div[lang="fr"]');
-    const enHeader = document.querySelector('header div[lang="en"]');
+function openTab(evt, tabName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
 
-    const setLanguage = (lang) => {
-        if (lang === 'en') {
-            frContainer.style.display = 'none';
-            enContainer.style.display = 'block';
-            frHeader.style.display = 'none';
-            enHeader.style.display = 'block';
-            document.documentElement.lang = 'en';
-        } else {
-            enContainer.style.display = 'none';
-            frContainer.style.display = 'block';
-            enHeader.style.display = 'none';
-            frHeader.style.display = 'block';
-            document.documentElement.lang = 'fr';
-        }
-    };
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
 
-    langFr.addEventListener('click', (e) => {
-        e.preventDefault();
-        setLanguage('fr');
-    });
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 
-    langEn.addEventListener('click', (e) => {
-        e.preventDefault();
-        setLanguage('en');
-    });
-
-    const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('en')) {
-        setLanguage('en');
-    } else {
-        setLanguage('fr');
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
 });
