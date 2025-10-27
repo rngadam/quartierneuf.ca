@@ -14,9 +14,9 @@
     <header>
         <div class="background-image">
             <picture>
-              <source type="image/webp" srcset="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1920w.webp 1920w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1280w.webp 1280w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.webp 640w">
-              <source type="image/jpeg" srcset="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1920w.jpg 1920w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1280w.jpg 1280w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.jpg 640w">
-              <img src="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.jpg" alt="High-angle, aerial view of a residential neighborhood and school complex, likely in a city." role="presentation" style="max-width:100%; height:auto;">
+              <source type="image/webp" srcset="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1920w.webp 1920w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1280w.webp 1280w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.webp 640w" sizes="(max-width: 1920px) 100vw, 1920px">
+              <source type="image/jpeg" srcset="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1920w.jpg 1920w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1280w.jpg 1280w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.jpg 640w" sizes="(max-width: 1920px) 100vw, 1920px">
+              <img src="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.jpg" alt="High-angle, aerial view of a residential neighborhood and school complex, likely in a city." style="max-width:100%; height:auto;">
             </picture>
         </div>
         <div id="lang-switcher">
@@ -33,26 +33,26 @@
     </header>
     <main>
         <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'About')" id="defaultOpen">À propos</button>
-            <button class="tablinks" onclick="openTab(event, 'Actions')">Actions</button>
-            <button class="tablinks" onclick="openTab(event, 'Contact')">Contactez-nous</button>
+            <button class="tablinks" onclick="window.openTab(event, 'About')" id="defaultOpen">À propos</button>
+            <button class="tablinks" onclick="window.openTab(event, 'Actions')">Actions</button>
+            <button class="tablinks" onclick="window.openTab(event, 'Contact')">Contactez-nous</button>
         </div>
 
         <div id="About" class="tabcontent">
             <div lang="fr">
-                <section id="welcome">
+                <div id="fr-welcome">
                     <p>Bienvenue sur le site de Neuf, l'initiative citoyenne où la propreté et le renouveau de notre quartier sont l'affaire de tous. Nous encourageons une prise en charge individuelle et continue pour améliorer notre environnement : notre rue, notre quartier, nos parcs. Chaque geste compte.</p>
-                </section>
-                <section id="mission">
+                </div>
+                <section id="fr-mission">
                     <h2>Notre mission</h2>
                     <p>L'initiative Neuf est née de la conviction qu'un environnement propre est la base d'une communauté saine et vibrante. Notre mission est de promouvoir une culture de la propreté par l'action individuelle et de créer un effet d'entraînement pour une prise en charge collective de notre environnement.</p>
                 </section>
             </div>
             <div lang="en" style="display:none;">
-                <section id="welcome">
+                <div id="en-welcome">
                     <p>Welcome to the Neuf website, the citizen initiative where the cleanliness and renewal of our neighborhood are everyone's business. We encourage individual and continuous action to improve our environment: our street, our neighborhood, our parks. Every action counts.</p>
-                </section>
-                <section id="mission">
+                </div>
+                <section id="en-mission">
                     <h2>Our mission</h2>
                     <p>The Neuf initiative was born from the conviction that a clean environment is the foundation of a healthy and vibrant community. Our mission is to promote a culture of cleanliness through individual action and to create a ripple effect for collective responsibility for our environment.</p>
                 </section>
@@ -61,7 +61,7 @@
 
         <div id="Actions" class="tabcontent">
             <div lang="fr">
-                <section id="actions">
+                <section id="fr-actions">
                     <h2>Comment agir ?</h2>
                     <article>
                         <h3>Passez à l'action</h3>
@@ -80,7 +80,7 @@
                         <p>Parlez à vos voisins et aux commerces. Encouragez-les à participer à cet effort collectif en maintenant la propreté au-delà de leur propre terrain.</p>
                     </article>
                 </section>
-                <section id="engage">
+                <section id="fr-engage">
                     <h2>Engager les commerces et la ville</h2>
                     <article>
                         <h3>Engager les commerces locaux</h3>
@@ -119,7 +119,7 @@
                 </section>
             </div>
             <div lang="en" style="display:none;">
-                <section id="actions">
+                <section id="en-actions">
                     <h2>How to act?</h2>
                     <article>
                         <h3>Take action</h3>
@@ -138,7 +138,7 @@
                         <p>Talk to your neighbors and local businesses. Encourage them to participate in this collective effort by maintaining cleanliness beyond their own property.</p>
                     </article>
                 </section>
-                <section id="engage">
+                <section id="en-engage">
                     <h2>Engage businesses and the city</h2>
                     <article>
                         <h3>Engage local businesses</h3>
@@ -180,28 +180,28 @@
 
         <div id="Contact" class="tabcontent">
             <div lang="fr">
-                <section id="gallery">
+                <div id="fr-gallery">
                     <h2>Nos actions en images</h2>
                     <a href="https://photos.google.com/share/AF1QipPYsGNBefXzpc1yzSRO5Yy3vr-N_lorMz3X1SCGlqzUYLxa-itu-zbJDXEMfl5e3A?key=UFAxaWhmaTlkdEJsd2JPeUNkdDlpRVo1Z25PcGtn" class="button" target="_blank">Voir notre album photo</a>
-                </section>
-                <section id="quartier">
+                </div>
+                <div id="fr-quartier">
                     <h2>Nos quartiers et périmètres</h2>
                     <p>Le premier quartier est pris en charge par Ricky. Il est situé dans le quadrilatère des rues 6e, Villeray, St-Michel et Everett. Le contact pour ce quartier est Ricky, au 7453 9e avenue.</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2664.4525551869856!2d-73.60151693875889!3d45.55933462812561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1752333320966!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <p>Tous les citoyens sont invités à joindre et prendre en charge leur propre périmètre dans leur quartier. Contactez-nous pour ajouter votre quartier à la carte !</p>
-                </section>
+                </div>
             </div>
             <div lang="en" style="display:none;">
-                <section id="gallery">
+                <div id="en-gallery">
                     <h2>Our actions in pictures</h2>
                     <a href="https://photos.google.com/share/AF1QipPYsGNBefXzpc1yzSRO5Yy3vr-N_lorMz3X1SCGlqzUYLxa-itu-zbJDXEMfl5e3A?key=UFAxaWhmaTlkdEJsd2JPeUNkdDlpRVo1Z25PcGtn" class="button" target="_blank">See our photo album</a>
-                </section>
-                <section id="neighbourhood">
+                </div>
+                <div id="en-neighbourhood">
                     <h2>Our Neighbourhoods and Perimeters</h2>
                     <p>The first neighbourhood is taken care of by Ricky. It is located in the quadrangle of 6th, Villeray, St-Michel and Everett streets. The contact for this neighbourhood is Ricky, at 7453 9th Avenue.</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2664.4525551869856!2d-73.60151693875889!3d45.55933462812561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1752333320966!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <p>All citizens are invited to join and take charge of their own perimeter in their neighbourhood. Contact us to add your neighbourhood to the map!</p>
-                </section>
+                </div>
             </div>
         </div>
     </main>

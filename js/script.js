@@ -1,9 +1,24 @@
 // Keep this in the global scope for the onclick attribute in the HTML
-const openTab = (evt, tabName) => {
+window.openTab = (evt, tabName) => {
     const tabcontent = document.querySelectorAll(".tabcontent");
     const tablinks = document.querySelectorAll(".tablinks");
 
-    tabcontent.forEach(tab => tab.style.display = "none");
+    tabcontent.forEach(tab => {
+        tab.style.display = "none";
+        // Also hide the direct children divs for About and Contact tabs
+        if (tab.id === 'About' || tab.id === 'Contact') {
+            const children = tab.querySelectorAll('div[lang]');
+            children.forEach(child => {
+                const lang = document.documentElement.lang;
+                if (child.getAttribute('lang') === lang) {
+                    child.style.display = 'block';
+                } else {
+                    child.style.display = 'none';
+                }
+            });
+        }
+    });
+
     tablinks.forEach(link => link.classList.remove("active"));
 
     document.getElementById(tabName).style.display = "block";
