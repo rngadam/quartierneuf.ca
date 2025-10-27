@@ -1,3 +1,111 @@
+/* General Body Styling */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8; /* Light blue-gray background */
+    color: #333;
+}
+
+/* Header */
+header {
+    position: relative;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    overflow: hidden; /* Ensures the overlay and image don't spill out */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire header area */
+    object-position: center;
+}
+
+/* Overlay to ensure text is readable */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: -1;
+}
+
+#lang-switcher {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+#lang-switcher a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    color: #004d40; /* Deep teal/blue for headings */
+}
+
+header h1, header h2 {
+    color: #fff; /* White for header titles */
+}
+
+/* Links and Buttons */
+a {
+    color: #00796b; /* Green for links */
+}
+
+.button {
+    display: inline-block;
+    background: #00796b; /* Green for buttons */
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #004d40; /* Darker green on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #004d40; /* Deep teal/blue */
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+}
+
 /* Style the tab */
 .tab {
   overflow: hidden;

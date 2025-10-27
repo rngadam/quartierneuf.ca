@@ -1,25 +1,47 @@
-function openTab(evt, tabName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
+// Keep this in the global scope for the onclick attribute in the HTML
+const openTab = (evt, tabName) => {
+    const tabcontent = document.querySelectorAll(".tabcontent");
+    const tablinks = document.querySelectorAll(".tablinks");
 
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+    tabcontent.forEach(tab => tab.style.display = "none");
+    tablinks.forEach(link => link.classList.remove("active"));
 
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+};
 
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Language switching logic
+    const langFrButton = document.getElementById('lang-fr');
+    const langEnButton = document.getElementById('lang-en');
+    const frElements = document.querySelectorAll('div[lang="fr"]');
+    const enElements = document.querySelectorAll('div[lang="en"]');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
+    const setLanguage = (lang) => {
+        const elementsToShow = lang === 'en' ? enElements : frElements;
+        const elementsToHide = lang === 'en' ? frElements : enElements;
+
+        elementsToShow.forEach(el => el.style.display = 'block');
+        elementsToHide.forEach(el => el.style.display = 'none');
+        document.documentElement.lang = lang;
+    };
+
+    langFrButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLanguage('fr');
+    });
+
+    langEnButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLanguage('en');
+    });
+
+    const userLang = navigator.language || navigator.userLanguage;
+    setLanguage(userLang.startsWith('en') ? 'en' : 'fr');
+
+    // Open the default tab
+    const defaultOpen = document.getElementById("defaultOpen");
+    if (defaultOpen) {
+        defaultOpen.click();
+    }
 });
