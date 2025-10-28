@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint && npm run validate-html && npm run check-links && npm run test:e2e",
     "lint": "eslint js/*.js",
-    "validate-html": "html-validator --file index.html --verbose",
+    "validate-html": "html-validate index.html",
     "check-links": "http-server -p 8080 & PID=$! && blc --recursive --exclude-external http://localhost:8080 ; EXIT_CODE=$? ; kill $PID ; exit $EXIT_CODE",
     "test:e2e": "playwright test",
     "start-server": "http-server -p 8080"
@@ -15,7 +15,7 @@
     "@playwright/test": "^1.28.0",
     "broken-link-checker": "^0.7.8",
     "eslint": "^8.2.0",
-    "html-validator-cli": "^7.0.0",
+    "html-validate": "^10.2.1",
     "http-server": "^14.1.1"
   }
 }

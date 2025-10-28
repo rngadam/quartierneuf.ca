@@ -16,7 +16,7 @@
             <picture>
               <source type="image/webp" srcset="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1920w.webp 1920w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1280w.webp 1280w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.webp 640w" sizes="(max-width: 1920px) 100vw, 1920px">
               <source type="image/jpeg" srcset="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1920w.jpg 1920w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-1280w.jpg 1280w, https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.jpg 640w" sizes="(max-width: 1920px) 100vw, 1920px">
-              <img src="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.jpg" alt="High-angle, aerial view of a residential neighborhood and school complex, likely in a city." style="max-width:100%; height:auto;">
+              <img src="https://raw.githubusercontent.com/rngadam/assets/refs/heads/main/processed_media/images/aerial-view-school-residential-neighborhood-640w.jpg" alt="High-angle, aerial view of a residential neighborhood and school complex, likely in a city." class="responsive-image">
             </picture>
         </div>
         <div id="lang-switcher">
@@ -33,9 +33,10 @@
     </header>
     <main>
         <div class="tab">
-            <button class="tablinks" onclick="window.openTab(event, 'About')" id="defaultOpen">À propos</button>
-            <button class="tablinks" onclick="window.openTab(event, 'Actions')">Actions</button>
-            <button class="tablinks" onclick="window.openTab(event, 'Contact')">Contactez-nous</button>
+            <button type="button" class="tablinks" onclick="window.openTab(event, 'About')" id="defaultOpen">À propos</button>
+            <button type="button" class="tablinks" onclick="window.openTab(event, 'Actions')">Actions</button>
+            <button type="button" class="tablinks" onclick="window.openTab(event, 'Engage')">Engager</button>
+            <button type="button" class="tablinks" onclick="window.openTab(event, 'Contact')">Contactez-nous</button>
         </div>
 
         <div id="About" class="tabcontent">
@@ -80,6 +81,31 @@
                         <p>Parlez à vos voisins et aux commerces. Encouragez-les à participer à cet effort collectif en maintenant la propreté au-delà de leur propre terrain.</p>
                     </article>
                 </section>
+            </div>
+            <div lang="en" style="display:none;">
+                <section id="en-actions">
+                    <h2>How to act?</h2>
+                    <article>
+                        <h3>Take action</h3>
+                        <p>Improve YOUR direct environment. Pick up a piece of trash, clean a small area, maintain a green space. Every action, no matter how small, has an impact.</p>
+                    </article>
+                    <article>
+                        <h3>Inspire your community</h3>
+                        <p>Take a geotagged photo of your intervention and share it. Set an example and create positive social pressure on your neighbors to do the same.</p>
+                    </article>
+                    <article>
+                        <h3>Report a major problem</h3>
+                        <p>For illegal dumping or waste problems that require a larger intervention, contact the City of Montreal directly at 311.</p>
+                    </article>
+                    <article>
+                        <h3>Start the conversation</h3>
+                        <p>Talk to your neighbors and local businesses. Encourage them to participate in this collective effort by maintaining cleanliness beyond their own property.</p>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <div id="Engage" class="tabcontent">
+            <div lang="fr">
                 <section id="fr-engage">
                     <h2>Engager les commerces et la ville</h2>
                     <article>
@@ -119,25 +145,6 @@
                 </section>
             </div>
             <div lang="en" style="display:none;">
-                <section id="en-actions">
-                    <h2>How to act?</h2>
-                    <article>
-                        <h3>Take action</h3>
-                        <p>Improve YOUR direct environment. Pick up a piece of trash, clean a small area, maintain a green space. Every action, no matter how small, has an impact.</p>
-                    </article>
-                    <article>
-                        <h3>Inspire your community</h3>
-                        <p>Take a geotagged photo of your intervention and share it. Set an example and create positive social pressure on your neighbors to do the same.</p>
-                    </article>
-                    <article>
-                        <h3>Report a major problem</h3>
-                        <p>For illegal dumping or waste problems that require a larger intervention, contact the City of Montreal directly at 311.</p>
-                    </article>
-                    <article>
-                        <h3>Start the conversation</h3>
-                        <p>Talk to your neighbors and local businesses. Encourage them to participate in this collective effort by maintaining cleanliness beyond their own property.</p>
-                    </article>
-                </section>
                 <section id="en-engage">
                     <h2>Engage businesses and the city</h2>
                     <article>
@@ -177,17 +184,16 @@
                 </section>
             </div>
         </div>
-
         <div id="Contact" class="tabcontent">
             <div lang="fr">
                 <div id="fr-gallery">
                     <h2>Nos actions en images</h2>
-                    <a href="https://photos.google.com/share/AF1QipPYsGNBefXzpc1yzSRO5Yy3vr-N_lorMz3X1SCGlqzUYLxa-itu-zbJDXEMfl5e3A?key=UFAxaWhmaTlkdEJsd2JPeUNkdDlpRVo1Z25PcGtn" class="button" target="_blank">Voir notre album photo</a>
+                    <a href="https://photos.google.com/share/AF1QipPYsGNBefXzpc1yzSRO5Yy3vr-N_lorMz3X1SCGlqzUYLxa-itu-zbJDXEMfl5e3A?key=UFAxaWhmaTlkdEJsd2JPeUNkdDlpRVo1Z2Gtn" class="button" target="_blank">Voir notre album photo</a>
                 </div>
                 <div id="fr-quartier">
                     <h2>Nos quartiers et périmètres</h2>
                     <p>Le premier quartier est pris en charge par Ricky. Il est situé dans le quadrilatère des rues 6e, Villeray, St-Michel et Everett. Le contact pour ce quartier est Ricky, au 7453 9e avenue.</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2664.4525551869856!2d-73.60151693875889!3d45.55933462812561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1752333320966!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe title="Carte du quartier Neuf" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2664.4525551869856!2d-73.60151693875889!3d45.55933462812561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1752333320966!5m2!1sen!2sca" width="600" height="450" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <p>Tous les citoyens sont invités à joindre et prendre en charge leur propre périmètre dans leur quartier. Contactez-nous pour ajouter votre quartier à la carte !</p>
                 </div>
             </div>
@@ -199,7 +205,7 @@
                 <div id="en-neighbourhood">
                     <h2>Our Neighbourhoods and Perimeters</h2>
                     <p>The first neighbourhood is taken care of by Ricky. It is located in the quadrangle of 6th, Villeray, St-Michel and Everett streets. The contact for this neighbourhood is Ricky, at 7453 9th Avenue.</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2664.4525551869856!2d-73.60151693875889!3d45.55933462812561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1752333320966!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe title="Neuf neighborhood map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2664.4525551869856!2d-73.60151693875889!3d45.55933462812561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sca!4v1752333320966!5m2!1sen!2sca" width="600" height="450" class="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <p>All citizens are invited to join and take charge of their own perimeter in their neighbourhood. Contact us to add your neighbourhood to the map!</p>
                 </div>
             </div>

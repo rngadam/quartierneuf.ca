@@ -141,3 +141,12 @@ footer a {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.map-iframe {
+    border: 0;
+}
