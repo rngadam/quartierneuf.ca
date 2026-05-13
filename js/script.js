@@ -1,42 +1,59 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const langFr = document.getElementById('lang-fr');
-    const langEn = document.getElementById('lang-en');
-    const frContainer = document.querySelector('div[lang="fr"]');
-    const enContainer = document.querySelector('div[lang="en"]');
-    const frHeader = document.querySelector('header div[lang="fr"]');
-    const enHeader = document.querySelector('header div[lang="en"]');
+// Keep this in the global scope for the onclick attribute in the HTML
+window.openTab = (evt, tabName) => {
+    const tabcontent = document.querySelectorAll(".tabcontent");
+    const tablinks = document.querySelectorAll(".tablinks");
 
+    tabcontent.forEach(tab => {
+        tab.style.display = "none";
+    });
+
+    tablinks.forEach(link => {
+        link.classList.remove("active");
+    });
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+
+    // Ensure the correct language content is shown for the active tab
+    const activeLangDiv = document.querySelector(`#${tabName} > div[lang='${document.documentElement.lang}']`);
+    if (activeLangDiv) {
+        activeLangDiv.style.display = 'block';
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const langFrButton = document.getElementById('lang-fr');
+    const langEnButton = document.getElementById('lang-en');
+    const frElements = document.querySelectorAll('div[lang="fr"]');
+    const enElements = document.querySelectorAll('div[lang="en"]');
 
     const setLanguage = (lang) => {
-        if (lang === 'en') {
-            frContainer.style.display = 'none';
-            enContainer.style.display = 'block';
-            frHeader.style.display = 'none';
-            enHeader.style.display = 'block';
-            document.documentElement.lang = 'en';
-        } else {
-            enContainer.style.display = 'none';
-            frContainer.style.display = 'block';
-            enHeader.style.display = 'none';
-            frHeader.style.display = 'block';
-            document.documentElement.lang = 'fr';
+        frElements.forEach(el => el.style.display = (lang === 'fr' ? 'block' : 'none'));
+        enElements.forEach(el => el.style.display = (lang === 'en' ? 'block' : 'none'));
+        document.documentElement.lang = lang;
+
+        // After switching language, re-apply tab visibility
+        const activeTab = document.querySelector(".tablinks.active");
+        if (activeTab) {
+            activeTab.click();
         }
     };
 
-    langFr.addEventListener('click', (e) => {
+    langFrButton.addEventListener('click', (e) => {
         e.preventDefault();
         setLanguage('fr');
     });
 
-    langEn.addEventListener('click', (e) => {
+    langEnButton.addEventListener('click', (e) => {
         e.preventDefault();
         setLanguage('en');
     });
 
     const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith('en')) {
-        setLanguage('en');
-    } else {
-        setLanguage('fr');
+    setLanguage(userLang.startsWith('en') ? 'en' : 'fr');
+
+    const defaultOpen = document.getElementById("defaultOpen");
+    if (defaultOpen) {
+        defaultOpen.click();
     }
 });

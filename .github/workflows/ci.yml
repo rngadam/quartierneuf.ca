@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Validate HTML
+        run: npm run validate-html
+
+      - name: Check for broken links
+        run: npm run check-links
+
+      - name: Run Playwright tests
+        run: npm run test:e2e
