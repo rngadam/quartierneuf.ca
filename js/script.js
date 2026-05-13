@@ -12,7 +12,14 @@ window.openTab = (evt, tabName) => {
     });
 
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.classList.add("active");
+
+    // Find the correct tab link and add the 'active' class
+    const activeTabLink = Array.from(tablinks).find(link => link.getAttribute('onclick') && (link.getAttribute('onclick').includes(`'${tabName}'`) || link.getAttribute('onclick').includes(`"${tabName}"`)));
+    if (activeTabLink) {
+        activeTabLink.classList.add("active");
+    } else if (evt && evt.currentTarget && evt.currentTarget.classList.contains('tablinks')) {
+        evt.currentTarget.classList.add("active");
+    }
 
     // Ensure the correct language content is shown for the active tab
     const activeLangDiv = document.querySelector(`#${tabName} > div[lang='${document.documentElement.lang}']`);

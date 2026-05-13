@@ -150,3 +150,15 @@ footer a {
 .map-iframe {
     border: 0;
 }
+
+/* New Utilities for Guide Content */
+.button-group {
+    margin-top: 20px;
+}
+.button.secondary {
+    margin-left: 10px;
+}
+.guide-image {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

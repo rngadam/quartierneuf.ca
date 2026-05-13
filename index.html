@@ -34,6 +34,7 @@
     <main>
         <div class="tab">
             <button type="button" class="tablinks" onclick="window.openTab(event, 'About')" id="defaultOpen">À propos</button>
+            <button type="button" class="tablinks" onclick="window.openTab(event, 'Guide')">Guide pratique</button>
             <button type="button" class="tablinks" onclick="window.openTab(event, 'Actions')">Actions</button>
             <button type="button" class="tablinks" onclick="window.openTab(event, 'Engage')">Engager</button>
             <button type="button" class="tablinks" onclick="window.openTab(event, 'Contact')">Contactez-nous</button>
@@ -41,21 +42,122 @@
 
         <div id="About" class="tabcontent">
             <div lang="fr">
-                <div id="fr-welcome">
-                    <p>Bienvenue sur le site de Neuf, l'initiative citoyenne où la propreté et le renouveau de notre quartier sont l'affaire de tous. Nous encourageons une prise en charge individuelle et continue pour améliorer notre environnement : notre rue, notre quartier, nos parcs. Chaque geste compte.</p>
-                </div>
-                <section id="fr-mission">
-                    <h2>Notre mission</h2>
-                    <p>L'initiative Neuf est née de la conviction qu'un environnement propre est la base d'une communauté saine et vibrante. Notre mission est de promouvoir une culture de la propreté par l'action individuelle et de créer un effet d'entraînement pour une prise en charge collective de notre environnement.</p>
+                <section id="fr-welcome">
+                    <h2>Une ville propre commence sur notre propre trottoir</h2>
+                    <p>On a souvent l'impression que la propreté de notre quartier ne dépend que des services municipaux. Pourtant, chaque jour, dans les rues de <strong>François-Perreault</strong> et de <strong>Saint-Michel</strong>, des citoyens transforment leur environnement, un déchet à la fois.</p>
+
+                    <h3>Pourquoi s’en occuper ?</h3>
+                    <p>Ce n'est pas qu'une question d'esthétique. C'est un geste pour :</p>
+                    <ul>
+                        <li>La santé des enfants qui jouent dans les parcs.</li>
+                        <li>Le bien-être des aînés en CHSLD.</li>
+                        <li>La protection de la biodiversité urbaine, en agissant avant que les tondeuses ne transforment le plastique en micro-particules.</li>
+                    </ul>
+
+                    <div class="button-group">
+                        <a href="#" onclick="window.openTab(event, 'Guide'); return false;" class="button">Découvrir le guide pratique</a>
+                        <a href="#" onclick="window.openTab(event, 'Contact'); return false;" class="button secondary">Adopter mon tronçon</a>
+                    </div>
                 </section>
             </div>
             <div lang="en" style="display:none;">
-                <div id="en-welcome">
-                    <p>Welcome to the Neuf website, the citizen initiative where the cleanliness and renewal of our neighborhood are everyone's business. We encourage individual and continuous action to improve our environment: our street, our neighborhood, our parks. Every action counts.</p>
-                </div>
-                <section id="en-mission">
-                    <h2>Our mission</h2>
-                    <p>The Neuf initiative was born from the conviction that a clean environment is the foundation of a healthy and vibrant community. Our mission is to promote a culture of cleanliness through individual action and to create a ripple effect for collective responsibility for our environment.</p>
+                <section id="en-welcome">
+                    <h2>A clean city starts on our own sidewalk</h2>
+                    <p>We often feel that the cleanliness of our neighborhood depends solely on municipal services. Yet, every day, on the streets of <strong>François-Perreault</strong> and <strong>Saint-Michel</strong>, citizens are transforming their environment, one piece of trash at a time.</p>
+
+                    <h3>Why should we care?</h3>
+                    <p>It's not just a matter of aesthetics. It's an action for:</p>
+                    <ul>
+                        <li>The health of children playing in the parks.</li>
+                        <li>The well-being of seniors in long-term care facilities (CHSLDs).</li>
+                        <li>The protection of urban biodiversity, by acting before lawnmowers turn plastic into micro-particles.</li>
+                    </ul>
+
+                    <div class="button-group">
+                        <a href="#" onclick="window.openTab(event, 'Guide'); return false;" class="button">Discover the practical guide</a>
+                        <a href="#" onclick="window.openTab(event, 'Contact'); return false;" class="button secondary">Adopt my street section</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="Guide" class="tabcontent">
+            <div lang="fr">
+                <section id="fr-guide">
+                    <h2>Guide pratique : Devenir un gardien du quartier</h2>
+                    <p>Ramasser des détritus peut être une activité gratifiante, saine et efficace si l'on adopte la bonne approche. Voici les leçons tirées de nos interventions dans <strong>François-Perreault</strong>.</p>
+
+                    <h3>L'équipement essentiel</h3>
+                    <p>Pour que l'activité reste un plaisir, misez sur l'ergonomie :</p>
+                    <ul>
+                        <li><strong>Le chariot à roulettes :</strong> L'outil indispensable pour éviter de porter des sacs lourds et tenir plus longtemps sans fatigue.</li>
+                        <li><strong>La pince de ramassage :</strong> Protège votre dos et assure une distance hygiénique avec les déchets.</li>
+                        <li><strong>Gants de protection :</strong> Modèles robustes ou anti-coupure pour manipuler le verre ou le métal en toute sécurité.</li>
+                    </ul>
+                    <!-- Replace the src below when the actual photo is ready -->
+                    <img src="https://placehold.co/600x400?text=Photo+du+chariot+%C3%A0+roulettes+en+action" alt="Chariot à roulettes en action" class="responsive-image guide-image">
+
+                    <h4>Suggestions d'équipement</h4>
+                    <p>Découvrez notre liste de suggestions pour vous équiper : <a href="https://www.myregistry.com/giftlist/quartierneufca?lang=fr" target="_blank">Liste d'équipement Quartier Neuf</a></p>
+                    <script id='script_myregistry_giftlist_iframe' type='text/javascript' src='https://www.myregistry.com/visitors/Embed/scripts/EmbedGiftList.js?r=6H4eRN_3HeIyMRf1YA35og2'></script>
+
+                    <h3>Stratégie de progression</h3>
+                    <p>Ne tentez pas de tout nettoyer en un jour. Adoptez une méthode progressive :</p>
+                    <ol>
+                        <li><strong>Votre seuil et votre ruelle :</strong> Commencez par ce que vous voyez en sortant de chez vous.</li>
+                        <li><strong>Votre trajet habituel :</strong> Ramassez sur le chemin vers le métro, l'épicerie ou l'école.</li>
+                        <li><strong>Les zones critiques :</strong> Ciblez les clôtures d'écoles, les abords des CHSLD et les parcs.</li>
+                        <li><strong>Le mode « Ronde » :</strong> Une fois le gros ramassé, effectuez de simples rondes de maintien.</li>
+                    </ol>
+
+                    <h3>L'alerte « Tondeuse »</h3>
+                    <p>C'est l'action la plus écologique : ramassez les déchets sur les pelouses (ex: école <strong>John F. Kennedy</strong>) <strong>avant</strong> le passage des services d'entretien. Cela évite la création de milliers de micro-plastiques impossibles à récupérer une fois déchiquetés.</p>
+
+                    <h3>État d'esprit et impact social</h3>
+                    <ul>
+                        <li><strong>Méditation active :</strong> Le ramassage est une forme de "gym gratuit" et une pause mentale précieuse.</li>
+                        <li><strong>Pression sociale douce :</strong> Être vu avec une pince et un chariot crée une norme positive qui incite les voisins à respecter davantage les lieux.</li>
+                        <li><strong>Signalement 311 :</strong> Utilisez l'application pour documenter les dépôts sauvages. Ces données aident les élus, comme <strong>Sylvain Ouellet</strong>, à justifier les budgets de nettoyage.</li>
+                    </ul>
+                </section>
+            </div>
+            <div lang="en" style="display:none;">
+                <section id="en-guide">
+                    <h2>Practical guide: Becoming a neighborhood guardian</h2>
+                    <p>Picking up litter can be a rewarding, healthy, and effective activity if approached the right way. Here are the lessons learned from our interventions in <strong>François-Perreault</strong>.</p>
+
+                    <h3>Essential equipment</h3>
+                    <p>To keep the activity enjoyable, focus on ergonomics:</p>
+                    <ul>
+                        <li><strong>The rolling cart:</strong> The indispensable tool to avoid carrying heavy bags and to last longer without fatigue.</li>
+                        <li><strong>The grabber tool:</strong> Protects your back and ensures a hygienic distance from the waste.</li>
+                        <li><strong>Protective gloves:</strong> Sturdy or cut-resistant models for safely handling glass or metal.</li>
+                    </ul>
+                    <!-- Replace the src below when the actual photo is ready -->
+                    <img src="https://placehold.co/600x400?text=Photo+of+the+rolling+cart+in+action" alt="Rolling cart in action" class="responsive-image guide-image">
+
+                    <h4>Equipment suggestions</h4>
+                    <p>Check out our suggested equipment list: <a href="https://www.myregistry.com/giftlist/quartierneufca?lang=en" target="_blank">Quartier Neuf Equipment List</a></p>
+                    <script id='script_myregistry_giftlist_iframe_en' type='text/javascript' src='https://www.myregistry.com/visitors/Embed/scripts/EmbedGiftList.js?r=6H4eRN_3HeIyMRf1YA35og2'></script>
+
+                    <h3>Progression strategy</h3>
+                    <p>Don't try to clean everything in one day. Adopt a gradual method:</p>
+                    <ol>
+                        <li><strong>Your doorstep and alleyway:</strong> Start with what you see when you step outside.</li>
+                        <li><strong>Your usual route:</strong> Pick up on your way to the metro, the grocery store, or school.</li>
+                        <li><strong>Critical zones:</strong> Target school fences, areas around CHSLDs, and parks.</li>
+                        <li><strong>"Patrol" mode:</strong> Once the bulk is collected, do simple maintenance patrols.</li>
+                    </ol>
+
+                    <h3>The "Lawnmower" alert</h3>
+                    <p>This is the most ecological action: pick up waste on lawns (e.g., <strong>John F. Kennedy</strong> school) <strong>before</strong> the maintenance services pass by. This prevents the creation of thousands of microplastics that are impossible to recover once shredded.</p>
+
+                    <h3>Mindset and social impact</h3>
+                    <ul>
+                        <li><strong>Active meditation:</strong> Picking up trash is a form of "free gym" and a valuable mental break.</li>
+                        <li><strong>Gentle social pressure:</strong> Being seen with a grabber and a cart creates a positive norm that encourages neighbors to respect the environment more.</li>
+                        <li><strong>311 Reporting:</strong> Use the app to document illegal dumping. This data helps elected officials, like <strong>Sylvain Ouellet</strong>, justify cleaning budgets.</li>
+                    </ul>
                 </section>
             </div>
         </div>

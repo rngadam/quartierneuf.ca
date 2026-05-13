@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -9,27 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+    - run: npm ci
 
-      - name: Install Playwright browsers
-        run: npx playwright install
+    - name: Run lint
+      run: npm run lint
 
-      - name: Run linter
-        run: npm run lint
+    - name: Run validate-html
+      run: npm run validate-html
 
-      - name: Validate HTML
-        run: npm run validate-html
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
 
-      - name: Check for broken links
-        run: npm run check-links
+    - name: Run e2e tests
+      run: npm run test:e2e
 
-      - name: Run Playwright tests
-        run: npm run test:e2e
+    - name: Run check-links
+      run: npm run check-links
