@@ -14,7 +14,7 @@ window.openTab = (evt, tabName) => {
     document.getElementById(tabName).style.display = "block";
 
     // Find the correct tab link and add the 'active' class
-    const activeTabLink = Array.from(tablinks).find(link => link.getAttribute('onclick') && (link.getAttribute('onclick').includes(`'${tabName}'`) || link.getAttribute('onclick').includes(`"${tabName}"`)));
+    const activeTabLink = document.querySelector(`.tablinks[data-tab="${tabName}"]`);
     if (activeTabLink) {
         activeTabLink.classList.add("active");
     } else if (evt && evt.currentTarget && evt.currentTarget.classList.contains('tablinks')) {
@@ -25,6 +25,20 @@ window.openTab = (evt, tabName) => {
     const activeLangDiv = document.querySelector(`#${tabName} > div[lang='${document.documentElement.lang}']`);
     if (activeLangDiv) {
         activeLangDiv.style.display = 'block';
+    }
+
+    // Load MyRegistry widget script if the active tab is 'Guide'
+    if (tabName === 'Guide') {
+        const lang = document.documentElement.lang;
+        const container = document.querySelector(`#Guide > div[lang='${lang}'] .myregistry-embed-container`);
+        if (container && !container.hasChildNodes()) {
+            const script = document.createElement('script');
+            script.id = 'script_myregistry_giftlist_iframe';
+            script.type = 'text/javascript';
+            const langParam = lang === 'en' ? '&lang=en' : '';
+            script.src = `https://www.myregistry.com/visitors/Embed/scripts/EmbedGiftList.js?r=6H4eRN_3HeIyMRf1YA35og2${langParam}`;
+            container.appendChild(script);
+        }
     }
 };
 

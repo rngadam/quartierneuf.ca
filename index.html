@@ -33,11 +33,11 @@
     </header>
     <main>
         <div class="tab">
-            <button type="button" class="tablinks" onclick="window.openTab(event, 'About')" id="defaultOpen">À propos</button>
-            <button type="button" class="tablinks" onclick="window.openTab(event, 'Guide')">Guide pratique</button>
-            <button type="button" class="tablinks" onclick="window.openTab(event, 'Actions')">Actions</button>
-            <button type="button" class="tablinks" onclick="window.openTab(event, 'Engage')">Engager</button>
-            <button type="button" class="tablinks" onclick="window.openTab(event, 'Contact')">Contactez-nous</button>
+            <button type="button" class="tablinks" data-tab="About" onclick="window.openTab(event, 'About')" id="defaultOpen">À propos</button>
+            <button type="button" class="tablinks" data-tab="Guide" onclick="window.openTab(event, 'Guide')">Guide pratique</button>
+            <button type="button" class="tablinks" data-tab="Actions" onclick="window.openTab(event, 'Actions')">Actions</button>
+            <button type="button" class="tablinks" data-tab="Engage" onclick="window.openTab(event, 'Engage')">Engager</button>
+            <button type="button" class="tablinks" data-tab="Contact" onclick="window.openTab(event, 'Contact')">Contactez-nous</button>
         </div>
 
         <div id="About" class="tabcontent">
@@ -99,7 +99,7 @@
 
                     <h4>Suggestions d'équipement</h4>
                     <p>Découvrez notre liste de suggestions pour vous équiper : <a href="https://www.myregistry.com/giftlist/quartierneufca?lang=fr" target="_blank">Liste d'équipement Quartier Neuf</a></p>
-                    <script id="script_myregistry_giftlist_iframe_fr" src="https://www.myregistry.com/visitors/Embed/scripts/EmbedGiftList.js?r=6H4eRN_3HeIyMRf1YA35og2"></script>
+                    <div class="myregistry-embed-container" data-lang="fr"></div>
 
                     <h3>Stratégie de progression</h3>
                     <p>Ne tentez pas de tout nettoyer en un jour. Adoptez une méthode progressive :</p>
@@ -138,7 +138,7 @@
 
                     <h4>Equipment suggestions</h4>
                     <p>Check out our suggested equipment list: <a href="https://www.myregistry.com/giftlist/quartierneufca?lang=en" target="_blank">Quartier Neuf Equipment List</a></p>
-                    <script id="script_myregistry_giftlist_iframe_en" src="https://www.myregistry.com/visitors/Embed/scripts/EmbedGiftList.js?r=6H4eRN_3HeIyMRf1YA35og2"></script>
+                    <div class="myregistry-embed-container" data-lang="en"></div>
 
                     <h3>Progression strategy</h3>
                     <p>Don't try to clean everything in one day. Adopt a gradual method:</p>
