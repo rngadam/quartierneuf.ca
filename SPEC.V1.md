@@ -64,7 +64,7 @@ Le contenu est structuré en deux blocs principaux, un pour chaque langue.
 
 ### Pied de page (Footer)
 
--   "© 2025 Neuf. Tous droits réservés. | All rights reserved."
+-   "© 2025 Quartier Neuf. Tous droits réservés. | All rights reserved."
 -   "Contact : contact@quartierneuf.ca"
 
 ## Structure des fichiers
