@@ -49,6 +49,9 @@ window.openTab = (evt, tabName) => {
 
 let drawnPath = [];
 
+// Make drawingManager globally accessible to be able to reset the map correctly
+window.drawingManager = null;
+
 window.initMap = function() {
     const mapElement = document.getElementById('map-selector');
     if (!mapElement) return;
@@ -60,7 +63,7 @@ window.initMap = function() {
     });
 
     // eslint-disable-next-line no-undef
-    const drawingManager = new google.maps.drawing.DrawingManager({
+    window.drawingManager = new google.maps.drawing.DrawingManager({
         // eslint-disable-next-line no-undef
         drawingMode: google.maps.drawing.OverlayType.POLYLINE,
         drawingControl: true,
@@ -76,10 +79,10 @@ window.initMap = function() {
         }
     });
 
-    drawingManager.setMap(map);
+    window.drawingManager.setMap(map);
 
     // eslint-disable-next-line no-undef
-    google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+    google.maps.event.addListener(window.drawingManager, 'overlaycomplete', function(event) {
         if (event.type === 'polyline') {
             const polyline = event.overlay;
             const path = polyline.getPath();
@@ -113,8 +116,42 @@ window.submitSegment = function() {
     }
 
     const coordinatesStr = drawnPath.map(p => `${p.lat.toFixed(5)},${p.lng.toFixed(5)}`).join('; ');
+
+    // Calculate distance
+    let distance = 0;
+    if (drawnPath.length > 1) {
+        for (let i = 0; i < drawnPath.length - 1; i++) {
+            // eslint-disable-next-line no-undef
+            const p1 = new google.maps.LatLng(drawnPath[i].lat, drawnPath[i].lng);
+            // eslint-disable-next-line no-undef
+            const p2 = new google.maps.LatLng(drawnPath[i+1].lat, drawnPath[i+1].lng);
+            // eslint-disable-next-line no-undef
+            distance += google.maps.geometry.spherical.computeDistanceBetween(p1, p2);
+        }
+    }
+    const distanceStr = distance.toFixed(0) + "m";
+
+    // Determine bounds for zoom
+    // eslint-disable-next-line no-undef
+    const bounds = new google.maps.LatLngBounds();
+    drawnPath.forEach(p => {
+        // eslint-disable-next-line no-undef
+        bounds.extend(new google.maps.LatLng(p.lat, p.lng));
+    });
+    const centerLat = bounds.getCenter().lat().toFixed(5);
+    const centerLng = bounds.getCenter().lng().toFixed(5);
+
+    // Create static map image URL
+    // Encode the path
+    const pathStr = drawnPath.map(p => `${p.lat},${p.lng}`).join('|');
+    const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?size=600x400&path=color:0x008000ff|weight:4|${pathStr}`;
+
     const subject = encodeURIComponent("Nouveau segment adopté / New adopted segment");
-    const body = encodeURIComponent(`Voici les coordonnées de mon segment de rue / Here are the coordinates for my street segment:\n\n${coordinatesStr}`);
+    let bodyText = `Voici les coordonnées de mon segment de rue (${distanceStr}) / Here are the coordinates for my street segment (${distanceStr}):\n\n${coordinatesStr}\n\n`;
+    bodyText += `Centre / Center: ${centerLat}, ${centerLng}\n`;
+    bodyText += `Image de la carte (nécessite une clé API pour fonctionner) / Map image (requires API key to work): ${staticMapUrl}`;
+
+    const body = encodeURIComponent(bodyText);
 
     window.location.href = `mailto:contact@quartierneuf.ca?subject=${subject}&body=${body}`;
 };
