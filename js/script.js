@@ -49,8 +49,8 @@ window.openTab = (evt, tabName) => {
 
 let drawnPath = [];
 
-// Make drawingManager globally accessible to be able to reset the map correctly
-window.drawingManager = null;
+// Make draw instance globally accessible
+window.drawInstance = null;
 
 window.initMap = function() {
     const mapElement = document.getElementById('map-selector');
@@ -59,51 +59,65 @@ window.initMap = function() {
     // eslint-disable-next-line no-undef
     const map = new google.maps.Map(mapElement, {
         center: { lat: 45.5593, lng: -73.6015 },
-        zoom: 15
+        zoom: 15,
+        disableDefaultUI: false
     });
 
     // eslint-disable-next-line no-undef
-    window.drawingManager = new google.maps.drawing.DrawingManager({
+    const adapter = new terraDrawGoogleMapsAdapter.TerraDrawGoogleMapsAdapter({
+        lib: map,
         // eslint-disable-next-line no-undef
-        drawingMode: google.maps.drawing.OverlayType.POLYLINE,
-        drawingControl: true,
-        drawingControlOptions: {
-            // eslint-disable-next-line no-undef
-            position: google.maps.ControlPosition.TOP_CENTER,
-            drawingModes: ['polyline']
-        },
-        polylineOptions: {
-            editable: true,
-            strokeColor: '#008000',
-            strokeWeight: 4
-        }
+        coordinatePrecision: 9
     });
 
-    window.drawingManager.setMap(map);
-
     // eslint-disable-next-line no-undef
-    google.maps.event.addListener(window.drawingManager, 'overlaycomplete', function(event) {
-        if (event.type === 'polyline') {
-            const polyline = event.overlay;
-            const path = polyline.getPath();
-            drawnPath = path.getArray().map(latLng => ({
-                lat: latLng.lat(),
-                lng: latLng.lng()
-            }));
+    window.drawInstance = new terraDraw.TerraDraw({
+        adapter: adapter,
+        modes: [
+            // eslint-disable-next-line no-undef
+            new terraDraw.TerraDrawLineStringMode({
+                styles: {
+                    lineStringColor: '#008000',
+                    lineStringWidth: 4
+                }
+            }),
+            // eslint-disable-next-line no-undef
+            new terraDraw.TerraDrawSelectMode({
+                flags: {
+                    lineString: {
+                        feature: {
+                            draggable: true,
+                            coordinates: {
+                                midpoints: true,
+                                draggable: true,
+                                deletable: true
+                            }
+                        }
+                    }
+                }
+            })
+        ]
+    });
 
-            // eslint-disable-next-line no-inner-declarations
-            function updatePath() {
-                drawnPath = path.getArray().map(latLng => ({
-                    lat: latLng.lat(),
-                    lng: latLng.lng()
+    window.drawInstance.start();
+    window.drawInstance.setMode('linestring');
+
+    window.drawInstance.on('change', () => {
+        const snapshot = window.drawInstance.getSnapshot();
+        if (snapshot && snapshot.length > 0) {
+            const feature = snapshot[snapshot.length - 1]; // get the last drawn feature
+            if (feature.geometry.type === 'LineString') {
+                drawnPath = feature.geometry.coordinates.map(coord => ({
+                    lat: coord[1],
+                    lng: coord[0]
                 }));
+                // Switch to select mode after drawing one linestring to allow editing
+                if (window.drawInstance.getMode() !== 'select') {
+                    window.drawInstance.setMode('select');
+                }
             }
-
-            // Allow updates if the user edits the polyline
-            // eslint-disable-next-line no-undef
-            google.maps.event.addListener(path, 'set_at', updatePath);
-            // eslint-disable-next-line no-undef
-            google.maps.event.addListener(path, 'insert_at', updatePath);
+        } else {
+            drawnPath = [];
         }
     });
 };
